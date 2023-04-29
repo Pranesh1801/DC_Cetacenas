@@ -59,6 +59,10 @@ One of the most significant benefits of the random forest algorithm is its abili
 
 ![Su](https://user-images.githubusercontent.com/68537161/235280832-09a0ac3f-69c0-489a-834f-91137a4ce524.png)
 
+# Project Demo
+https://user-images.githubusercontent.com/68537161/235286968-307ce19b-76a4-44bd-bd95-95529889f284.mp4
+
 
 # Conclusion
 
+Chronic diseases like cancer, diabetes and many more cause life changing disasters to one's family and themselves. Health is something very much precious to everyone and having a good health can ensure a great life. Prediction of these diseases early on can ensure that people can find a cure and thus lead a happy life. We anticipate our application can save lives from the clutches of these diseases, ensuring a safer tomorrow.
