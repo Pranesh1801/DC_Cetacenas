@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <link rel="stylesheet" href = "Cetaceans.css" type="text/css">
+
+    </head>
+    <body class="cetaceans">
+        <div class="slider--container">
+ 
+            <img class="slider--image" src="health1.jpg" alt="winter-01"  />
+            <img class="slider--image" src="health2.jpg" alt="winter-02"  />
+        </div>
+        <form id="msform" method="post" action="process.php">
+
+          <fieldset>
+            <h1 class="fs-title">DC_Cetaceans</h1>
+            <h2 class="fs-subtitle">A disease prediction model for Intel One API Hackathon</h2>
+            <h2 class="fs-subtitle">Choose from the following for what disease you wish to check</h2>
+
+            <a href="">
+                <button class="z" onclick="window.location.href='Cetaceans.html'">
+                    Brain Stroke Prediction
+                </button>
+            </a>
+
+            <button class="z" onclick="window.location.href='Cetaceans.html'">
+                Diabetes Prediction
+            </button>
+
+            <button class="z" onclick="window.location.href='Cetaceans.html'">
+                Lung Cancer Prediction
+            </button>
+
+          </fieldset>
+        </form>
+        <script>
+          function myFunction () {
+          let userinfo = { 
+            'pregnancies': document.querySelector("#Pregnancies"),
+            'glucose':document.querySelector("#Glucose"),
+            'blood_pressure':document.querySelector("#BloodPressure"),
+            'skin_thickness':document.querySelector("#SkinThickness"),
+            'insulin':document.querySelector("#Insulin"),
+            'bmi':document.querySelector("#BMI"),
+            'diabetes_pedigree_function':document.querySelector("#DiabetesPedigreeFunction"),
+            'age':document.querySelector("#Age"),
+          }
+          const request = new XMLHttpRequest()
+          request.open('POST', `/processUserInfo/${JSON.stringify(userInfo)}`)
+          request.onload = () => {
+            const flaskMessage= request.responseText
+            console.log(flaskMessage)
+          }
+          request.send()
+          }
+        </script>  
+    </body>
+    
+</html>

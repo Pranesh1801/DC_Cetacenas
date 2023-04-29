@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href = "Cetaceans.css" type="text/css">
+
+    </head>
+    <body>
+        <div class="slider--container">
+ 
+            <img class="slider--image" src="health1.jpg" alt="winter-01"  />
+            <img class="slider--image" src="health2.jpg" alt="winter-02"  />
+        </div>
+        <form id="msform" method="post" action="process.php">
+
+          <fieldset>
+            <h2 class="fs-title">Diabetes Prediction DC_Cetaceans</h2>
+            <h3 class="fs-subtitle">Fill in details for Diabetes prediction</h3>
+            <h3 class="fs-subtitle">(Enter 1 for YES and 0 for NO)</h3>
+            <input type="text" name="Pregnancies" placeholder="Number of Pregnancies"  />
+            <input type="text" name="Glucose" placeholder="Glucose Level" />
+            <input type="text" name="BloodPressure" placeholder="Blood Pressure" />
+            <input type="text" name="SkinThickness" placeholder="Thickness of Skin" />
+            <input type="text" name="Insulin" placeholder="Blood Insulin level" />
+            <input type="text" name="BMI" placeholder="Body Mass Index" />
+            <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" />
+            <input type="text" name="Age" placeholder="Age of Patient" />
+            <button class="submit" type="submit" name="login" onclick="myFunction ()">Verify</button>
+          </fieldset>
+        </form>
+        <script>
+          function myFunction () {
+          let userinfo = { 
+            'pregnancies': document.querySelector("#Pregnancies"),
+            'glucose':document.querySelector("#Glucose"),
+            'blood_pressure':document.querySelector("#BloodPressure"),
+            'skin_thickness':document.querySelector("#SkinThickness"),
+            'insulin':document.querySelector("#Insulin"),
+            'bmi':document.querySelector("#BMI"),
+            'diabetes_pedigree_function':document.querySelector("#DiabetesPedigreeFunction"),
+            'age':document.querySelector("#Age"),
+          }
+          const request = new XMLHttpRequest()
+          request.open('POST', `/processUserInfo/${JSON.stringify(userInfo)}`)
+          request.onload = () => {
+            const flaskMessage= request.responseText
+            console.log(flaskMessage)
+          }
+          request.send()
+          }
+        </script>  
+    </body>
+    
+</html>

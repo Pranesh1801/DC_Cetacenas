@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="stylesheet" href = "Cetaceans.css" type="text/css">
+
+    </head>
+    <body>
+        <div class="slider--container">
+ 
+            <img class="slider--image" src="health1.jpg" alt="winter-01"  />
+            <img class="slider--image" src="health2.jpg" alt="winter-02"  />
+        </div>
+        <form id="msform" method="post" action="process.php">
+
+          <fieldset>
+            <h2 class="fs-title">Brain Stroke Prediction DC_Cetaceans</h2>
+            <h3 class="fs-subtitle">Fill in details for Brain Stroke prediction</h3>
+            <h3 class="fs-subtitle">(Enter 1 for YES and 0 for NO)</h3>
+            <input type="text" name="Pregnancies" placeholder="Gender"  />
+            <input type="text" name="Glucose" placeholder="Age" />
+            <input type="text" name="BloodPressure" placeholder="Hypertension" />
+            <input type="text" name="SkinThickness" placeholder="Heart Disease" />
+            <input type="text" name="Insulin" placeholder="Martial status" />
+            <input type="text" name="BMI" placeholder="work-type" />
+            <input type="text" name="DiabetesPedigreeFunction" placeholder="residence type" />
+            <input type="text" name="Age" placeholder="Average glucose level" />
+            <input type="text" name="AAA" placeholder="BMI" />
+            <input type="text" name="A" placeholder="Smoking status" />
+            <button class="submit" type="submit" name="login" onclick="myFunction ()">Verify</button>
+          </fieldset>
+        </form>
+        <script>
+          function myFunction () {
+          let userinfo = { 
+            'pregnancies': document.querySelector("#Pregnancies"),
+            'glucose':document.querySelector("#Glucose"),
+            'blood_pressure':document.querySelector("#BloodPressure"),
+            'skin_thickness':document.querySelector("#SkinThickness"),
+            'insulin':document.querySelector("#Insulin"),
+            'bmi':document.querySelector("#BMI"),
+            'diabetes_pedigree_function':document.querySelector("#DiabetesPedigreeFunction"),
+            'age':document.querySelector("#Age"),
+          }
+          const request = new XMLHttpRequest()
+          request.open('POST', `/processUserInfo/${JSON.stringify(userInfo)}`)
+          request.onload = () => {
+            const flaskMessage= request.responseText
+            console.log(flaskMessage)
+          }
+          request.send()
+          }
+        </script>  
+    </body>
+    
+</html>
