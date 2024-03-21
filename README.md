@@ -66,3 +66,5 @@ https://user-images.githubusercontent.com/68537161/235286968-307ce19b-76a4-44bd-
 # Conclusion
 
 Chronic diseases like cancer, diabetes and many more cause life changing disasters to one's family and themselves. Health is something very much precious to everyone and having a good health can ensure a great life. Prediction of these diseases early on can ensure that people can find a cure and thus lead a happy life. We anticipate our application can save lives from the clutches of these diseases, ensuring a safer tomorrow.
+
+# Designed and Developed by Pranesh R and Jeyasundar R
